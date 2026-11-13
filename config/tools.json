@@ -1,0 +1,241 @@
+{
+  "cli": [
+    {
+      "id": "claude",
+      "name": "Claude Code",
+      "cmd": "/Users/runner/.local/bin/claude"
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "cmd": "/Users/runner/.local/bin/codex"
+    },
+    {
+      "id": "grok",
+      "name": "Grok Build",
+      "cmd": "/Users/runner/.grok/bin/grok"
+    },
+    {
+      "id": "kimi",
+      "name": "Kimi Code",
+      "cmd": "/opt/homebrew/bin/kimi"
+    },
+    {
+      "id": "codebuddy",
+      "name": "CodeBuddy",
+      "cmd": "/Users/runner/.local/bin/codebuddy"
+    },
+    {
+      "id": "aider",
+      "name": "Aider",
+      "cmd": "/Users/runner/.local/bin/aider"
+    },
+    {
+      "id": "pi",
+      "name": "Pi",
+      "cmd": "/Users/runner/.local/bin/pi"
+    },
+    {
+      "id": "opencode",
+      "name": "opencode",
+      "cmd": "/opt/homebrew/bin/opencode"
+    },
+    {
+      "id": "dsh",
+      "name": "DSH",
+      "cmd": "/Users/runner/.nvm/versions/node/v24.18.0/bin/dsh-tui",
+      "environment": {
+        "PATH": "/Users/runner/.nvm/versions/node/v24.18.0/bin:/Users/runner/.local/bin:/Users/runner/.hermes/node/bin:/opt/homebrew/bin:/usr/local/bin:/opt/anaconda3/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+      }
+    },
+    {
+      "id": "hermes",
+      "name": "Hermes",
+      "cmd": "/Users/runner/.local/bin/hermes"
+    },
+    {
+      "id": "zsh",
+      "name": "zsh",
+      "cmd": "/bin/zsh"
+    },
+    {
+      "id": "cmd",
+      "name": "Command Code",
+      "cmd": "/Users/runner/.local/bin/cmd"
+    },
+    {
+      "id": "openclaw",
+      "name": "OpenClaw",
+      "cmd": "/opt/homebrew/bin/openclaw"
+    }
+  ],
+  "apps": [
+    {
+      "id": "app.kimi-chat",
+      "name": "Kimi",
+      "path": "/Applications/Kimi.app"
+    },
+    {
+      "id": "app.kimi",
+      "name": "Kimi Code",
+      "path": "/Applications/Kimi Code.app"
+    },
+    {
+      "id": "app.chatbox",
+      "name": "Chatbox",
+      "path": "/Applications/Chatbox.app"
+    },
+    {
+      "id": "app.hermes",
+      "name": "Hermes",
+      "path": "/Applications/Hermes.app"
+    },
+    {
+      "id": "app.claude",
+      "name": "Claude",
+      "path": "/Applications/Claude.app"
+    },
+    {
+      "id": "app.codex-desktop",
+      "name": "ChatGPT",
+      "path": "/Applications/ChatGPT.app"
+    },
+    {
+      "id": "app.gemini",
+      "name": "Gemini",
+      "path": "/Applications/Gemini.app"
+    },
+    {
+      "id": "app.qoder",
+      "name": "Qoder",
+      "path": "/Applications/Qoder.app"
+    },
+    {
+      "id": "app.zcode",
+      "name": "ZCode 桌面版",
+      "path": "/Applications/ZCode.app"
+    },
+    {
+      "id": "app.opencode",
+      "name": "OpenCode",
+      "path": "/Applications/OpenCode.app"
+    },
+    {
+      "id": "app.devin",
+      "name": "Devin",
+      "path": "/Applications/Devin.app"
+    },
+    {
+      "id": "app.workbuddy",
+      "name": "WorkBuddy",
+      "path": "/Applications/WorkBuddy.app"
+    },
+    {
+      "id": "app.magpie",
+      "name": "Magpie",
+      "path": "/Applications/magpie.app"
+    },
+    {
+      "id": "app.grok-build",
+      "name": "Grok Bot",
+      "path": "/Applications/Grok Bot.app"
+    },
+    {
+      "id": "app.ollama",
+      "name": "Ollama",
+      "path": "/Applications/Ollama.app"
+    },
+    {
+      "id": "app.skills-manager",
+      "name": "skills-manager",
+      "path": "/Applications/skills-manager.app"
+    },
+    {
+      "id": "app.ghostty",
+      "name": "Ghostty",
+      "path": "/Applications/Ghostty.app"
+    },
+    {
+      "id": "app.vscode",
+      "name": "VS Code",
+      "path": "/Applications/Visual Studio Code.app"
+    },
+    {
+      "id": "app.pycharm",
+      "name": "PyCharm",
+      "path": "/Applications/PyCharm.app"
+    },
+    {
+      "id": "app.anaconda",
+      "name": "Anaconda",
+      "path": "/Applications/Anaconda-Navigator.app"
+    },
+    {
+      "id": "app.doubao-work",
+      "name": "豆包办公",
+      "path": "/Applications/DoubaoWork.app"
+    },
+    {
+      "id": "app.open-design",
+      "name": "Open Design",
+      "path": "/Applications/Open Design.app"
+    },
+    {
+      "id": "app.masscode",
+      "name": "massCode",
+      "path": "/Applications/massCode.app"
+    },
+    {
+      "id": "app.eagle",
+      "name": "Eagle",
+      "path": "/Applications/Eagle.app"
+    },
+    {
+      "id": "app.zotero",
+      "name": "Zotero",
+      "path": "/Applications/Zotero.app"
+    },
+    {
+      "id": "app.obsidian",
+      "name": "Obsidian",
+      "path": "/Applications/Obsidian.app"
+    },
+    {
+      "id": "app.notion",
+      "name": "Notion",
+      "path": "/Applications/Notion.app"
+    },
+    {
+      "id": "app.outlook",
+      "name": "Outlook",
+      "path": "/Applications/Microsoft Outlook.app"
+    },
+    {
+      "id": "app.finalshell",
+      "name": "FinalShell",
+      "path": "/Applications/FinalShell.app"
+    },
+    {
+      "id": "app.muse",
+      "name": "Muse AI",
+      "path": "/Applications/Muse.app"
+    }
+  ],
+  "web": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "url": "https://chatgpt.com"
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "url": "https://claude.ai"
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "url": "https://gemini.google.com"
+    }
+  ]
+}

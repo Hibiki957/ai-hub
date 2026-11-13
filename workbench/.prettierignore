@@ -1,0 +1,11 @@
+# Source hashes are part of runtime identity: brain.mjs feeds the api-text
+# harness version, and managed-hermes hashes the harness sources into its
+# connection key. Reformatting them would invalidate existing pairings.
+server/brain.mjs
+server/harnesses/
+# Vendored upstream client and build output
+web/dist/
+node_modules/
+validation/
+*.md
+*.json

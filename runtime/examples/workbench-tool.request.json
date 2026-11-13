@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "taskID": "tool-smoke-task",
+  "runID": "replace-with-unique-run-id",
+  "goal": "验证受控本地命令与工作台结果回传",
+  "inputs": "离线烟测，无模型与网络",
+  "acceptance": "最终结果包含 AIHUB_CONTROLLED_READY，产物有 SHA-256 manifest",
+  "constraints": "只执行本地 echo，禁止网络",
+  "deliverables": "受控执行记录与结果文本",
+  "decisionSummary": "用户确认的本地验证流程",
+  "references": [],
+  "plan": {
+    "revision": 1,
+    "nodes": [
+      { "id": "echo", "title": "受控本地命令", "kind": "tool", "dependsOn": [], "prompt": "输出固定验收标记", "command": "/bin/echo", "arguments": ["AIHUB_CONTROLLED_READY"], "timeoutMs": 10000, "retries": 0, "sideEffect": "none" },
+      { "id": "result", "title": "汇总输出", "kind": "output", "dependsOn": ["echo"], "prompt": "查看执行结果", "arguments": [], "timeoutMs": 10000, "retries": 0, "sideEffect": "none" }
+    ]
+  },
+  "policy": {
+    "workingDirectory": "/tmp/aihub-workbench-smoke",
+    "readRoots": [],
+    "writeRoots": ["/tmp/aihub-workbench-smoke"],
+    "allowedCommands": ["/bin/echo"],
+    "allowedTools": ["command"],
+    "networkHosts": [],
+    "privacy": "local",
+    "budgetUSD": null,
+    "maxParallel": 2,
+    "executionIsolation": "macos-seatbelt",
+    "confirmed": true
+  }
+}

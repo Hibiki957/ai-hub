@@ -1,0 +1,12 @@
+node_modules
+web/dist
+runtime-data
+data
+secrets
+.env
+.env.*
+*.sqlite*
+*.db*
+*.log
+.DS_Store
+._*

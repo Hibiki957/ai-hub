@@ -1,0 +1,684 @@
+{
+  "schemaVersion": 1,
+  "auditedAt": "2026-10-19",
+  "authorizationPolicy": "本目录仅实现已发现入口启动与显式引用关联；其他客户端的授权不继承。API能力 available=false 表示 Hub 尚未实现，不能由安装状态推断。",
+  "integrations": [
+    {
+      "id": "eagle",
+      "name": "Eagle",
+      "role": "素材库",
+      "appPaths": [
+        "/Applications/Eagle.app"
+      ],
+      "pwaPaths": [],
+      "capabilities": {
+        "read": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "本机 HTTP API",
+          "authorization": "需 Eagle 运行，并单独批准 Hub 访问指定素材",
+          "detail": "官方 API 可检索素材；Hub 尚未实现读取适配器。"
+        },
+        "write": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "本机 HTTP API addFromPath",
+          "authorization": "逐项批准导入文件与目标库",
+          "detail": "官方支持导入；本页不会导入或修改素材。"
+        },
+        "execute": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "素材整理不授予任意脚本执行。"
+        },
+        "embed": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "未实现 Eagle 应用内嵌。"
+        }
+      },
+      "limitations": [
+        "素材继续保存在 Eagle；Hub 只关联用户提供的文件或来源链接。",
+        "没有读取 Eagle 内部数据库，也未探测本地 API。"
+      ],
+      "officialSources": [
+        {
+          "title": "Eagle API",
+          "url": "https://api.eagle.cool/"
+        },
+        {
+          "title": "添加本地文件",
+          "url": "https://api.eagle.cool/item/add-from-path"
+        }
+      ],
+      "referenceRules": {
+        "allowHTTPS": true,
+        "allowFiles": true,
+        "deepLinks": [],
+        "examples": [
+          "file:///path/to/exported-asset.png",
+          "https://example.com/source-page"
+        ]
+      },
+      "authorization": "AI Hub 尚未建立此应用的数据授权；其他客户端或连接器的授权不继承。"
+    },
+    {
+      "id": "zotero",
+      "name": "Zotero",
+      "role": "论文库",
+      "appPaths": [
+        "/Applications/Zotero.app"
+      ],
+      "pwaPaths": [],
+      "capabilities": {
+        "read": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "Web API v3 / Local API",
+          "authorization": "Web API 需相应库授权；本地 API 需在 Zotero 中允许访问",
+          "detail": "Hub 尚未连接；select 引用只定位条目。"
+        },
+        "write": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "Web API v3 write requests",
+          "authorization": "单独授予目标库写权限并预览变更",
+          "detail": "尚未实现写回；不直接修改 zotero.sqlite。"
+        },
+        "execute": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "参考文献管理不授予命令执行。"
+        },
+        "embed": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "尚未嵌入 Zotero 或 PDF 阅读器。"
+        }
+      },
+      "limitations": [
+        "支持 zotero://select 的文献/集合定位链接，不执行其他协议动作。",
+        "是否可访问某个条目仍由 Zotero 的库和账户权限决定。"
+      ],
+      "officialSources": [
+        {
+          "title": "Zotero Web API v3",
+          "url": "https://www.zotero.org/support/dev/web_api/v3/start"
+        },
+        {
+          "title": "Zotero Local API",
+          "url": "https://www.zotero.org/support/dev/web_api/v3/local_api"
+        },
+        {
+          "title": "官方团队说明 select URI",
+          "url": "https://forums.zotero.org/discussion/78053/given-the-pdf-file-of-an-article-how-can-you-find-out-its-uri"
+        }
+      ],
+      "referenceRules": {
+        "allowHTTPS": true,
+        "allowFiles": true,
+        "deepLinks": [
+          "zotero-select"
+        ],
+        "examples": [
+          "zotero://select/library/items/ABCD2345",
+          "https://www.zotero.org/users/USER_ID/items/ITEM_KEY"
+        ]
+      },
+      "authorization": "AI Hub 尚未建立此应用的数据授权；其他客户端或连接器的授权不继承。"
+    },
+    {
+      "id": "masscode",
+      "name": "massCode",
+      "role": "脚本／代码片段库",
+      "appPaths": [
+        "/Applications/massCode.app"
+      ],
+      "pwaPaths": [],
+      "capabilities": {
+        "read": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "本机 MCP / API",
+          "authorization": "需在 massCode 启用 API 与 MCP，并给 Hub 单独配置令牌",
+          "detail": "可搜索和读取；Hub 尚未连接。"
+        },
+        "write": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "本机 MCP",
+          "authorization": "需批准具体片段/笔记创建或变更",
+          "detail": "Hub 本页只存引用，不改内部库或复用其他客户端令牌。"
+        },
+        "execute": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "MCP execute_http_request",
+          "authorization": "明确请求预览与网络操作授权；脚本需在 massCode 受信任",
+          "detail": "官方有 HTTP 请求执行能力；Hub 本页不调用。"
+        },
+        "embed": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "尚未嵌入 massCode 编辑器。"
+        }
+      },
+      "limitations": [
+        "关联现有导出或原始 Markdown 路径，不复制整个片段库。",
+        "脚本引用只是一份资料，不会自动运行。"
+      ],
+      "officialSources": [
+        {
+          "title": "massCode MCP",
+          "url": "https://masscode.io/documentation/mcp.html"
+        },
+        {
+          "title": "Code snippets",
+          "url": "https://masscode.io/documentation/code/snippets.html"
+        }
+      ],
+      "referenceRules": {
+        "allowHTTPS": true,
+        "allowFiles": true,
+        "deepLinks": [],
+        "examples": [
+          "file:///path/to/snippet.md",
+          "file:///path/to/script.py"
+        ]
+      },
+      "authorization": "AI Hub 尚未建立此应用的数据授权；其他客户端或连接器的授权不继承。"
+    },
+    {
+      "id": "miro",
+      "name": "Miro",
+      "role": "灵感库",
+      "appPaths": [],
+      "pwaPaths": [
+        "~/Applications/Chrome Apps.localized/Miro.app"
+      ],
+      "capabilities": {
+        "read": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "REST API v2",
+          "authorization": "AI Hub 自己的 OAuth；boards:read",
+          "detail": "尚未实现 OAuth 或读取适配器。"
+        },
+        "write": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "REST API v2",
+          "authorization": "AI Hub 自己的 OAuth；boards:write 与任务写入确认",
+          "detail": "尚未写入画板。"
+        },
+        "execute": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "画板操作不等于命令执行。"
+        },
+        "embed": {
+          "available": true,
+          "officialSupport": "documented",
+          "interface": "Hub WKWebView 独立网页标签",
+          "authorization": "用户在 Hub 内单独登录；不复制其他应用、浏览器或连接器的凭据",
+          "detail": "内部网页路由已接通；登录和高级功能待实测，不表示 Agent 的 API 已授权。 当前打开官方网页，尚未实现 Miro Live Embed 专用画板组件。"
+        }
+      },
+      "limitations": [
+        "本机发现 Miro Chrome PWA；未发现独立 Miro.app。",
+        "本页打开现有 PWA 或关联画板链接，不读取画板内容。"
+      ],
+      "officialSources": [
+        {
+          "title": "Miro API 授权",
+          "url": "https://developers.miro.com/reference/overview"
+        },
+        {
+          "title": "Miro scopes",
+          "url": "https://developers.miro.com/reference/scopes"
+        },
+        {
+          "title": "Miro Live Embed 认证",
+          "url": "https://developers.miro.com/docs/miro-live-embed-authentication"
+        }
+      ],
+      "referenceRules": {
+        "allowHTTPS": true,
+        "allowFiles": true,
+        "deepLinks": [],
+        "examples": [
+          "https://miro.com/app/board/BOARD_ID/"
+        ]
+      },
+      "authorization": "AI Hub 尚未建立此应用的数据授权；其他客户端或连接器的授权不继承。",
+      "workspace": [
+        {
+          "kind": "web",
+          "title": "Miro",
+          "url": "https://miro.com/app/dashboard/"
+        }
+      ]
+    },
+    {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "role": "知识库",
+      "appPaths": [
+        "/Applications/Obsidian.app"
+      ],
+      "pwaPaths": [],
+      "capabilities": {
+        "read": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "Markdown 文件 / 插件 Vault API",
+          "authorization": "用户选定具体文件或 vault 范围",
+          "detail": "本页只检查引用文件是否存在，不读取正文或遍历 vault。"
+        },
+        "write": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "文件 / Vault API / URI new",
+          "authorization": "文件差异预览与指定 vault 写入权限",
+          "detail": "尚未实现写回；禁止将 new/daily/append 等写动作当引用。"
+        },
+        "execute": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "不接受执行插件命令的 URI。"
+        },
+        "embed": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "保留原生 Obsidian 编辑器，未嵌入。"
+        }
+      },
+      "limitations": [
+        "只接受 obsidian://open 的定位参数 vault/file/path；拒绝回调、剪贴板和写入参数。",
+        "资料主库仍是 Obsidian；Hub 不扫描或复制全部笔记。"
+      ],
+      "officialSources": [
+        {
+          "title": "Obsidian URI",
+          "url": "https://help.obsidian.md/Extending+Obsidian/Obsidian+URI"
+        },
+        {
+          "title": "插件 API",
+          "url": "https://docs.obsidian.md/Plugins/Vault"
+        }
+      ],
+      "referenceRules": {
+        "allowHTTPS": true,
+        "allowFiles": true,
+        "deepLinks": [
+          "obsidian-open"
+        ],
+        "examples": [
+          "obsidian://open?vault=MyVault&file=Research%2FNote",
+          "file:///path/to/note.md"
+        ]
+      },
+      "authorization": "AI Hub 尚未建立此应用的数据授权；其他客户端或连接器的授权不继承。"
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "role": "日程库",
+      "appPaths": [
+        "/Applications/Notion.app"
+      ],
+      "pwaPaths": [],
+      "capabilities": {
+        "read": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "Notion API",
+          "authorization": "AI Hub 独立 connection/OAuth/PAT，并限定共享页面",
+          "detail": "尚未实现 API；按日程页面/数据库保存引用。"
+        },
+        "write": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "Notion API",
+          "authorization": "Hub 独立授权和目标页面写权限",
+          "detail": "尚未创建、修改或删除日程。"
+        },
+        "execute": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "页面自动化不授予本机执行权限。"
+        },
+        "embed": {
+          "available": true,
+          "officialSupport": "notVerified",
+          "interface": "Hub WKWebView 独立网页标签",
+          "authorization": "用户在 Hub 内单独登录；不复制其他应用、浏览器或连接器的凭据",
+          "detail": "内部网页路由已接通；登录和高级功能待实测，不表示 Agent 的 API 已授权。"
+        }
+      },
+      "limitations": [
+        "Notion 页面/数据库日程与 Notion Calendar 外部日历不是同一 API，未声称已同步日历。",
+        "既有 dot/连接器权限不会被读取或继承。"
+      ],
+      "officialSources": [
+        {
+          "title": "Notion 授权",
+          "url": "https://developers.notion.com/guides/get-started/authorization"
+        },
+        {
+          "title": "页面内容 API",
+          "url": "https://developers.notion.com/guides/data-apis/working-with-page-content"
+        }
+      ],
+      "referenceRules": {
+        "allowHTTPS": true,
+        "allowFiles": true,
+        "deepLinks": [],
+        "examples": [
+          "https://www.notion.so/PAGE_ID"
+        ]
+      },
+      "authorization": "AI Hub 尚未建立此应用的数据授权；其他客户端或连接器的授权不继承。",
+      "workspace": [
+        {
+          "kind": "web",
+          "title": "Notion",
+          "url": "https://www.notion.so/"
+        }
+      ]
+    },
+    {
+      "id": "chatbox",
+      "name": "Chatbox",
+      "role": "常驻对话入口",
+      "appPaths": [
+        "/Applications/Chatbox.app"
+      ],
+      "pwaPaths": [],
+      "capabilities": {
+        "read": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "未核实可供 Hub 读取既有聊天记录的官方控制 API。"
+        },
+        "write": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "尚未实现聊天导入或写入，不改内部存储。"
+        },
+        "execute": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "Chatbox 的模型调用与 Hub 任务执行分离。"
+        },
+        "embed": {
+          "available": true,
+          "officialSupport": "notVerified",
+          "interface": "Hub WKWebView 独立网页标签",
+          "authorization": "用户在 Hub 内单独登录；不复制其他应用、浏览器或连接器的凭据",
+          "detail": "内部网页路由已接通；登录和高级功能待实测，不表示 Agent 的 API 已授权。 桌面聊天记录、知识库和 MCP 不会自动迁入。"
+        }
+      },
+      "limitations": [
+        "常驻指入口可用，不代表常驻启动模型。",
+        "可关联用户主动导出的聊天文件；不会复制或抓取全部聊天。"
+      ],
+      "officialSources": [
+        {
+          "title": "Chatbox 官方源码与功能",
+          "url": "https://github.com/chatboxai/chatbox"
+        },
+        {
+          "title": "官方帮助",
+          "url": "https://chatboxai.app/en/help-center"
+        },
+        {
+          "title": "Chatbox 官方网页版",
+          "url": "https://web.chatboxai.app/"
+        }
+      ],
+      "referenceRules": {
+        "allowHTTPS": true,
+        "allowFiles": true,
+        "deepLinks": [],
+        "examples": [
+          "file:///path/to/exported-chat.md"
+        ]
+      },
+      "authorization": "AI Hub 尚未建立此应用的数据授权；其他客户端或连接器的授权不继承。",
+      "workspace": [
+        {
+          "kind": "web",
+          "title": "Chatbox",
+          "url": "https://web.chatboxai.app/"
+        }
+      ]
+    },
+    {
+      "id": "ghostty",
+      "name": "Ghostty",
+      "role": "常驻终端入口",
+      "appPaths": [
+        "/Applications/Ghostty.app"
+      ],
+      "pwaPaths": [],
+      "capabilities": {
+        "read": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "macOS AppleScript 字典",
+          "authorization": "需要 macOS Automation 授权；限定窗口/终端",
+          "detail": "官方可查询窗口/终端元数据；Hub 未调用 AppleScript。"
+        },
+        "write": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "AppleScript input/action",
+          "authorization": "单次输入的明确授权；不向未知终端注入",
+          "detail": "官方支持输入与控制；本页未实现。"
+        },
+        "execute": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "AppleScript / 终端命令",
+          "authorization": "必须经任务执行层权限校验，不能继承任意已打开 shell",
+          "detail": "独立 Ghostty 窗口不属于 Hub 受控任务执行器。"
+        },
+        "embed": {
+          "available": true,
+          "officialSupport": "documented",
+          "interface": "Hub 内置 Ghostty 终端",
+          "authorization": "用户在 Hub 内主动打开；手动终端不授予 Agent 任务权限",
+          "detail": "从本页创建本机交互 shell，不接管现有 Ghostty.app 窗口。"
+        }
+      },
+      "limitations": [
+        "独立常驻终端与任务受控终端分开。",
+        "关联脚本/日志只是资料；不自动执行命令。"
+      ],
+      "officialSources": [
+        {
+          "title": "Ghostty AppleScript",
+          "url": "https://ghostty.org/docs/features/applescript"
+        },
+        {
+          "title": "Ghostty 1.3 发布说明",
+          "url": "https://ghostty.org/docs/install/release-notes/1-3-0"
+        }
+      ],
+      "referenceRules": {
+        "allowHTTPS": true,
+        "allowFiles": true,
+        "deepLinks": [],
+        "examples": [
+          "file:///path/to/runbook.md",
+          "file:///path/to/script.sh"
+        ]
+      },
+      "authorization": "AI Hub 尚未建立此应用的数据授权；其他客户端或连接器的授权不继承。",
+      "workspace": [
+        {
+          "kind": "terminal",
+          "title": "内置终端"
+        }
+      ]
+    },
+    {
+      "id": "outlook",
+      "name": "Outlook",
+      "role": "邮件信息",
+      "appPaths": [
+        "/Applications/Microsoft Outlook.app"
+      ],
+      "pwaPaths": [],
+      "capabilities": {
+        "read": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "Microsoft Graph",
+          "authorization": "AI Hub 独立 OAuth；按需 Mail.ReadBasic/Mail.Read",
+          "detail": "尚未读取邮箱；保存用户提供的邮件链接或导出文件。"
+        },
+        "write": {
+          "available": false,
+          "officialSupport": "documented",
+          "interface": "Microsoft Graph",
+          "authorization": "独立 Mail.ReadWrite/Mail.Send；发送需展示收件人与正文并确认",
+          "detail": "尚未实现修改/发信，不接受 mailto 作为资料引用。"
+        },
+        "execute": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "邮件内容不授予命令执行。"
+        },
+        "embed": {
+          "available": true,
+          "officialSupport": "notVerified",
+          "interface": "Hub WKWebView 独立网页标签",
+          "authorization": "用户在 Hub 内单独登录；不复制其他应用、浏览器或连接器的凭据",
+          "detail": "内部网页路由已接通；登录和高级功能待实测，不表示 Agent 的 API 已授权。"
+        }
+      },
+      "limitations": [
+        "本机 Outlook 登录不等于 Hub 已获 Graph 授权。",
+        "本页不会读取账户、令牌或邮件数据库；不会发送邮件。"
+      ],
+      "officialSources": [
+        {
+          "title": "Microsoft Graph 读取邮件",
+          "url": "https://learn.microsoft.com/en-us/graph/api/user-list-messages?view=graph-rest-1.0"
+        },
+        {
+          "title": "Microsoft Graph 发送邮件",
+          "url": "https://learn.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0"
+        }
+      ],
+      "referenceRules": {
+        "allowHTTPS": true,
+        "allowFiles": true,
+        "deepLinks": [],
+        "examples": [
+          "https://outlook.office.com/mail/deeplink/read/MESSAGE_ID",
+          "file:///path/to/exported-message.eml"
+        ]
+      },
+      "authorization": "AI Hub 尚未建立此应用的数据授权；其他客户端或连接器的授权不继承。",
+      "workspace": [
+        {
+          "kind": "web",
+          "title": "Outlook（个人邮箱）",
+          "url": "https://outlook.live.com/mail/"
+        },
+        {
+          "kind": "web",
+          "title": "Outlook（工作或学校）",
+          "url": "https://outlook.office.com/mail/"
+        }
+      ]
+    },
+    {
+      "id": "finalshell",
+      "name": "FinalShell",
+      "role": "远程管理",
+      "appPaths": [
+        "/Applications/FinalShell.app"
+      ],
+      "pwaPaths": [],
+      "capabilities": {
+        "read": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "本次官方资料未发现可供 Hub 稳定读取连接清单的公开控制 API。"
+        },
+        "write": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "不修改连接配置、密码库或内部数据库。"
+        },
+        "execute": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "未发现经核实的 Hub 调用协议；远程任务需单独 SSH 适配器和主机授权。"
+        },
+        "embed": {
+          "available": false,
+          "officialSupport": "notVerified",
+          "interface": "未核实适用的官方接口",
+          "authorization": "未申请；本页只提供入口和引用",
+          "detail": "不强行嵌入 FinalShell 桌面。"
+        }
+      },
+      "limitations": [
+        "本页只打开 FinalShell 和关联运维文档；不列出或读取已保存主机。",
+        "FinalShell 管理连接不赋予 Agent 默认 SSH 权限；拒绝 ssh/sftp 等执行或连接 URI。"
+      ],
+      "officialSources": [
+        {
+          "title": "FinalShell 官方网站",
+          "url": "https://www.hostbuf.com/"
+        }
+      ],
+      "referenceRules": {
+        "allowHTTPS": true,
+        "allowFiles": true,
+        "deepLinks": [],
+        "examples": [
+          "file:///path/to/host-runbook.md"
+        ]
+      },
+      "authorization": "AI Hub 尚未建立此应用的数据授权；其他客户端或连接器的授权不继承。"
+    }
+  ]
+}

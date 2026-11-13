@@ -1,0 +1,250 @@
+.task-file-editor {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  flex-direction: column;
+  gap: 14px;
+  overflow: auto;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.task-file-editor-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.task-file-editor-heading h2 {
+  font-size: 19px;
+  margin-top: 5px;
+  overflow-wrap: anywhere;
+}
+.task-file-editor-heading > div:last-child {
+  display: flex;
+  gap: 7px;
+  flex-shrink: 0;
+}
+.task-file-editor-intro,
+.task-file-editor-note {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.task-file-editor-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 550;
+}
+.task-file-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  min-height: 350px;
+  flex: 1;
+}
+.task-file-comparison > section {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.task-file-comparison header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  background: var(--subtle);
+}
+.task-file-comparison header small {
+  color: var(--muted);
+  font-weight: 400;
+}
+.task-file-comparison pre,
+.task-file-comparison textarea {
+  flex: 1;
+  width: 100%;
+  min-height: 300px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--surface);
+  color: var(--text);
+  padding: 14px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font:
+    12px/1.9 ui-monospace,
+    monospace;
+  user-select: text;
+  overflow: auto;
+}
+.task-file-comparison textarea {
+  resize: vertical;
+  outline-offset: -3px;
+}
+.task-file-comparison textarea:disabled {
+  opacity: 1;
+  background: var(--subtle);
+}
+.task-file-editor-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.task-file-editor-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.task-file-editor-actions p {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.task-file-editor-warning,
+.task-file-editor-notice,
+.task-file-editor-receipt {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.task-file-editor-warning {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+.task-file-editor-warning button {
+  margin-top: 9px;
+}
+.task-file-editor-notice,
+.task-file-editor-receipt {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.task-file-editor-receipt details {
+  margin-top: 8px;
+}
+.task-file-editor-receipt pre {
+  white-space: pre-wrap;
+  font-size: 10px;
+  max-height: 200px;
+  overflow: auto;
+  user-select: text;
+}
+.task-file-editor-proof,
+.task-file-editor-discard {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.task-file-editor-proof code {
+  overflow-wrap: anywhere;
+  user-select: text;
+}
+.task-file-editor-proof p,
+.task-file-editor-discard p {
+  margin-top: 8px;
+}
+.task-file-editor-discard button {
+  margin-top: 8px;
+  color: var(--danger);
+}
+.task-file-editor-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 22px;
+  color: var(--muted);
+}
+.task-tool-inputs li > .task-file-edit-button {
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 3px 7px;
+  font-size: 10px;
+  min-height: 26px;
+}
+.task-file-editor-active .task-tool-workspace-main > .flow-canvas {
+  display: none;
+}
+.task-file-history-button {
+  align-self: flex-start;
+  margin-bottom: 9px;
+  font-size: 12px;
+}
+.task-file-editor-actions {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--surface);
+  padding: 10px 0;
+  border-block: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.task-file-history {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  max-height: 112px;
+  overflow: auto;
+  flex-shrink: 0;
+  margin-bottom: 10px;
+}
+.task-file-history > button {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  min-width: 140px;
+  max-width: 250px;
+  text-align: left;
+  padding: 9px 12px;
+}
+.task-file-history > button[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.task-file-history strong {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.task-file-history span {
+  font-size: 10px;
+  color: var(--muted);
+}
+@media (max-width: 1050px) {
+  .task-file-comparison {
+    grid-template-columns: 1fr;
+  }
+  .task-file-comparison > section {
+    min-height: 220px;
+  }
+  .task-file-comparison textarea,
+  .task-file-comparison pre {
+    min-height: 220px;
+    max-height: 360px;
+  }
+  .task-file-editor-heading {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}

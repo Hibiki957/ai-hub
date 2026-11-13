@@ -1,0 +1,128 @@
+.task-visual-viewer {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 18px;
+  overflow: auto;
+}
+.task-visual-viewer > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+.task-visual-viewer h2 {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 4px;
+  overflow-wrap: anywhere;
+}
+.task-visual-viewer button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.task-visual-viewer > header > button {
+  flex-shrink: 0;
+}
+.task-visual-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--surface);
+  padding-block: 8px;
+}
+.task-visual-toolbar > div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.task-visual-toolbar span {
+  min-width: 65px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+.task-visual-stage {
+  background: var(--subtle);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  min-height: 300px;
+  height: 50vh;
+  flex: 1;
+  overflow: auto;
+  position: relative;
+}
+.task-visual-stage[data-fit='true'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.task-visual-stage > img {
+  display: block;
+  flex-shrink: 0;
+}
+.task-visual-caption {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.task-visual-caption code {
+  overflow-wrap: anywhere;
+  user-select: text;
+}
+.task-visual-caption p {
+  margin-top: 6px;
+}
+.task-visual-caption details {
+  margin-top: 8px;
+}
+.task-visual-error,
+.task-visual-notice {
+  font-size: 12px;
+  line-height: 1.8;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+.task-visual-error {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+.task-visual-notice {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+@media (max-width: 700px) {
+  .task-visual-viewer > header {
+    flex-wrap: wrap;
+  }
+  .task-visual-viewer {
+    padding: 12px;
+  }
+  .task-visual-stage {
+    min-height: 230px;
+    flex: none;
+    height: 45vh;
+  }
+  .task-visual-toolbar button {
+    font-size: 11px;
+  }
+}
+.task-visual-image-status {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+}

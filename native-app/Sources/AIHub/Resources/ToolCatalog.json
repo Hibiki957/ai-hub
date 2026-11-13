@@ -1,0 +1,407 @@
+{
+  "schemaVersion": 1,
+  "primaryAgentIDs": [
+    "openclaw",
+    "hermes",
+    "zcode",
+    "kimi",
+    "opencode"
+  ],
+  "cli": [
+    {
+      "id": "cli.claude",
+      "productID": "claude",
+      "name": "claude",
+      "title": "Claude Code",
+      "command": "~/.local/bin/claude"
+    },
+    {
+      "id": "cli.codex",
+      "productID": "codex",
+      "name": "codex",
+      "title": "Codex",
+      "command": "~/.local/bin/codex"
+    },
+    {
+      "id": "cli.grok",
+      "productID": "grok",
+      "name": "grok",
+      "title": "Grok Build",
+      "command": "~/.grok/bin/grok"
+    },
+    {
+      "id": "cli.kimi",
+      "productID": "kimi",
+      "name": "kimi",
+      "title": "Kimi Code",
+      "command": "/opt/homebrew/bin/kimi"
+    },
+    {
+      "id": "cli.codebuddy",
+      "productID": "codebuddy",
+      "name": "codebuddy",
+      "title": "CodeBuddy",
+      "command": "~/.local/bin/codebuddy"
+    },
+    {
+      "id": "cli.aider",
+      "productID": "aider",
+      "name": "aider",
+      "title": "Aider",
+      "command": "~/.local/bin/aider"
+    },
+    {
+      "id": "cli.pi",
+      "productID": "pi",
+      "name": "pi",
+      "title": "Pi",
+      "command": "~/.local/bin/pi"
+    },
+    {
+      "id": "cli.opencode",
+      "productID": "opencode",
+      "name": "opencode",
+      "title": "opencode",
+      "command": "/opt/homebrew/bin/opencode"
+    },
+    {
+      "id": "cli.dsh",
+      "productID": "dsh",
+      "name": "dsh",
+      "title": "DSH",
+      "command": "~/.nvm/versions/node/v24.18.0/bin/dsh-tui",
+      "pathPrepend": [
+        "~/.nvm/versions/node/v24.18.0/bin"
+      ]
+    },
+    {
+      "id": "cli.hermes",
+      "productID": "hermes",
+      "name": "hermes",
+      "title": "Hermes",
+      "command": "~/.local/bin/hermes"
+    },
+    {
+      "id": "cli.zsh",
+      "productID": "zsh",
+      "name": "zsh",
+      "title": "zsh",
+      "command": "/bin/zsh"
+    },
+    {
+      "id": "cli.cmd",
+      "productID": "cmd",
+      "name": "cmd",
+      "title": "Command Code",
+      "command": "~/.local/bin/cmd"
+    },
+    {
+      "id": "cli.openclaw",
+      "productID": "openclaw",
+      "name": "openclaw",
+      "title": "OpenClaw",
+      "command": "/opt/homebrew/bin/openclaw"
+    }
+  ],
+  "apps": [
+    {
+      "id": "app.kimi-chat",
+      "productID": "kimi-chat",
+      "name": "Kimi",
+      "path": "/Applications/Kimi.app"
+    },
+    {
+      "id": "app.kimi",
+      "productID": "kimi",
+      "name": "Kimi Code",
+      "path": "/Applications/Kimi Code.app"
+    },
+    {
+      "id": "app.chatbox",
+      "productID": "chatbox",
+      "name": "Chatbox",
+      "path": "/Applications/Chatbox.app"
+    },
+    {
+      "id": "app.hermes",
+      "productID": "hermes",
+      "name": "Hermes",
+      "path": "/Applications/Hermes.app"
+    },
+    {
+      "id": "app.claude",
+      "productID": "claude",
+      "name": "Claude",
+      "path": "/Applications/Claude.app"
+    },
+    {
+      "id": "app.codex-desktop",
+      "productID": "codex-desktop",
+      "name": "ChatGPT",
+      "path": "/Applications/ChatGPT.app"
+    },
+    {
+      "id": "app.gemini",
+      "productID": "gemini",
+      "name": "Gemini",
+      "path": "/Applications/Gemini.app"
+    },
+    {
+      "id": "app.qoder",
+      "productID": "qoder",
+      "name": "Qoder",
+      "path": "/Applications/Qoder.app"
+    },
+    {
+      "id": "app.zcode",
+      "productID": "zcode",
+      "name": "ZCode 桌面版",
+      "path": "/Applications/ZCode.app"
+    },
+    {
+      "id": "app.opencode",
+      "productID": "opencode",
+      "name": "OpenCode",
+      "path": "/Applications/OpenCode.app"
+    },
+    {
+      "id": "app.devin",
+      "productID": "devin",
+      "name": "Devin",
+      "path": "/Applications/Devin.app"
+    },
+    {
+      "id": "app.workbuddy",
+      "productID": "workbuddy",
+      "name": "WorkBuddy",
+      "path": "/Applications/WorkBuddy.app"
+    },
+    {
+      "id": "app.magpie",
+      "productID": "magpie",
+      "name": "Magpie",
+      "path": "/Applications/magpie.app"
+    },
+    {
+      "id": "app.grok-build",
+      "productID": "grok-build",
+      "name": "Grok Bot",
+      "path": "/Applications/Grok Bot.app"
+    },
+    {
+      "id": "app.ollama",
+      "productID": "ollama",
+      "name": "Ollama",
+      "path": "/Applications/Ollama.app"
+    },
+    {
+      "id": "app.skills-manager",
+      "productID": "skills-manager",
+      "name": "skills-manager",
+      "path": "/Applications/skills-manager.app"
+    },
+    {
+      "id": "app.ghostty",
+      "productID": "ghostty",
+      "name": "Ghostty",
+      "path": "/Applications/Ghostty.app"
+    },
+    {
+      "id": "app.vscode",
+      "productID": "vscode",
+      "name": "VS Code",
+      "path": "/Applications/Visual Studio Code.app"
+    },
+    {
+      "id": "app.pycharm",
+      "productID": "pycharm",
+      "name": "PyCharm",
+      "path": "/Applications/PyCharm.app"
+    },
+    {
+      "id": "app.anaconda",
+      "productID": "anaconda",
+      "name": "Anaconda",
+      "path": "/Applications/Anaconda-Navigator.app"
+    },
+    {
+      "id": "app.doubao-work",
+      "productID": "doubao-work",
+      "name": "豆包办公",
+      "path": "/Applications/DoubaoWork.app"
+    },
+    {
+      "id": "app.open-design",
+      "productID": "open-design",
+      "name": "Open Design",
+      "path": "/Applications/Open Design.app"
+    },
+    {
+      "id": "app.masscode",
+      "productID": "masscode",
+      "name": "massCode",
+      "path": "/Applications/massCode.app"
+    },
+    {
+      "id": "app.eagle",
+      "productID": "eagle",
+      "name": "Eagle",
+      "path": "/Applications/Eagle.app"
+    },
+    {
+      "id": "app.zotero",
+      "productID": "zotero",
+      "name": "Zotero",
+      "path": "/Applications/Zotero.app"
+    },
+    {
+      "id": "app.obsidian",
+      "productID": "obsidian",
+      "name": "Obsidian",
+      "path": "/Applications/Obsidian.app"
+    },
+    {
+      "id": "app.notion",
+      "productID": "notion",
+      "name": "Notion",
+      "path": "/Applications/Notion.app"
+    },
+    {
+      "id": "app.outlook",
+      "productID": "outlook",
+      "name": "Outlook",
+      "path": "/Applications/Microsoft Outlook.app"
+    },
+    {
+      "id": "app.finalshell",
+      "productID": "finalshell",
+      "name": "FinalShell",
+      "path": "/Applications/FinalShell.app"
+    },
+    {
+      "id": "app.muse",
+      "productID": "muse",
+      "name": "Muse AI",
+      "path": "/Applications/Muse.app"
+    }
+  ],
+  "agents": [
+    {
+      "id": "openclaw",
+      "name": "OpenClaw",
+      "subtitle": "随时启程",
+      "transport": "acp",
+      "command": "/opt/homebrew/bin/openclaw",
+      "args": [
+        "acp"
+      ]
+    },
+    {
+      "id": "hermes",
+      "name": "Hermes",
+      "subtitle": "记忆与行动",
+      "transport": "acp",
+      "command": "~/.local/bin/hermes",
+      "args": [
+        "acp"
+      ]
+    },
+    {
+      "id": "kimi",
+      "name": "Kimi",
+      "subtitle": "探索与思考",
+      "transport": "acp",
+      "command": "/opt/homebrew/bin/kimi",
+      "args": [
+        "acp"
+      ]
+    },
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "subtitle": "开放创造",
+      "transport": "acp",
+      "command": "/opt/homebrew/bin/opencode",
+      "args": [
+        "acp"
+      ]
+    },
+    {
+      "id": "zcode",
+      "name": "ZCode 终端版（高级）",
+      "subtitle": "专注构建",
+      "transport": "zcode-tui-engine",
+      "command": null,
+      "args": []
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "subtitle": "终端与代码",
+      "transport": "acp",
+      "command": "codex-acp",
+      "args": []
+    },
+    {
+      "id": "claude",
+      "name": "Claude Code",
+      "subtitle": "终端与代码",
+      "transport": "acp",
+      "command": "claude-agent-acp",
+      "args": []
+    }
+  ],
+  "web": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "url": "https://chatgpt.com"
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "url": "https://claude.ai"
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "url": "https://gemini.google.com"
+    }
+  ],
+  "localServices": [
+    {
+      "port": 3080,
+      "command": "~/.local/bin/launch-dsh.sh",
+      "args": [],
+      "logPath": "/tmp/dsh-web.log"
+    },
+    {
+      "port": 7860,
+      "command": "~/.local/share/odysseus/venv/bin/python3",
+      "args": [
+        "~/.local/bin/odysseus-launchd.py"
+      ],
+      "logPath": "/tmp/odysseus.log"
+    },
+    {
+      "port": 3100,
+      "command": "~/.local/bin/paperclip",
+      "args": [
+        "start"
+      ],
+      "logPath": "/tmp/paperclip.log"
+    }
+  ],
+  "pathEntries": [
+    "~/.local/bin",
+    "~/.hermes/node/bin",
+    "~/.nvm/versions/node/v24.18.0/bin",
+    "/opt/homebrew/bin",
+    "/usr/local/bin",
+    "/opt/anaconda3/bin",
+    "/usr/bin",
+    "/bin",
+    "/usr/sbin",
+    "/sbin"
+  ]
+}

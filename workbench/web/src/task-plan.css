@@ -1,0 +1,302 @@
+.task-plan-panel {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--line, #d8dee4);
+  border-radius: 16px;
+  background: var(--surface, #fff);
+}
+.task-plan-panel h3,
+.task-plan-panel p {
+  margin: 0;
+}
+.task-plan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.task-plan-header > div {
+  display: grid;
+  gap: 5px;
+}
+.task-plan-header h3 {
+  font-size: 17px;
+}
+.task-plan-header > button {
+  flex-shrink: 0;
+}
+.task-plan-eyebrow {
+  color: var(--muted, #66707a);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+.task-plan-intro,
+.task-plan-note,
+.task-plan-tool-scope {
+  color: var(--muted, #66707a);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.task-plan-empty {
+  display: grid;
+  gap: 7px;
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--bg, #f5f7f7);
+}
+.task-plan-empty strong {
+  font-size: 14px;
+}
+.task-plan-empty span {
+  color: var(--muted, #66707a);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.task-plan-saved {
+  display: grid;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line, #d8dee4);
+}
+.task-plan-saved-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+.task-plan-saved-heading span {
+  color: var(--muted, #66707a);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.task-plan-saved > p {
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+.task-plan-summary {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.task-plan-summary li {
+  display: grid;
+  gap: 5px;
+  padding: 12px 14px;
+  border: 1px solid var(--line, #d8dee4);
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+.task-plan-summary strong {
+  font-size: 13px;
+}
+.task-plan-summary span,
+.task-plan-summary small {
+  color: var(--muted, #66707a);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.task-plan-editor,
+.task-plan-step-list {
+  display: grid;
+  gap: 16px;
+}
+.task-plan-editor {
+  padding-top: 14px;
+  border-top: 1px solid var(--line, #d8dee4);
+}
+.task-plan-basics {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(140px, 1fr);
+  gap: 12px;
+}
+.task-plan-editor label:not(.task-plan-confirm) {
+  min-width: 0;
+}
+.task-plan-basics > label,
+.task-plan-field,
+.task-plan-assignment > label,
+.task-plan-step-top > label {
+  display: grid;
+  gap: 7px;
+  font-size: 12px;
+}
+.task-plan-editor input:not([type='checkbox']),
+.task-plan-editor textarea,
+.task-plan-editor select {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 10px 11px;
+  border: 1px solid var(--line, #d8dee4);
+  border-radius: 8px;
+  background: var(--surface, #fff);
+  color: inherit;
+  font: inherit;
+  line-height: 1.55;
+}
+.task-plan-editor textarea {
+  resize: vertical;
+  min-height: 84px;
+}
+.task-plan-editor :is(input, textarea, select):focus-visible {
+  outline: 2px solid var(--accent, #27776c);
+  outline-offset: 2px;
+}
+.task-plan-step {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid var(--line, #d8dee4);
+  border-radius: 14px;
+}
+.task-plan-step legend {
+  padding: 0 8px;
+  color: var(--muted, #66707a);
+  font-size: 12px;
+}
+.task-plan-step-number {
+  display: inline-grid;
+  place-items: center;
+  width: 23px;
+  height: 23px;
+  margin-right: 7px;
+  border: 1px solid var(--line, #d8dee4);
+  border-radius: 7px;
+  color: var(--ink, #29383b);
+  font-weight: 600;
+}
+.task-plan-step-top {
+  display: flex;
+  align-items: end;
+  gap: 10px;
+}
+.task-plan-step-top > label {
+  flex: 1;
+}
+.task-plan-remove {
+  flex-shrink: 0;
+  font-size: 12px;
+}
+.task-plan-assignment {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.task-plan-assignment > label:last-child {
+  grid-column: 1 / -1;
+}
+.task-plan-dependencies {
+  display: grid;
+  gap: 9px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line, #d8dee4);
+  font-size: 12px;
+}
+.task-plan-dependencies > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.task-plan-dependencies label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 100%;
+  padding: 7px 10px;
+  border: 1px solid var(--line, #d8dee4);
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+.task-plan-dependencies label:has(input:checked) {
+  background: var(--bg, #f5f7f7);
+  border-color: var(--accent, #27776c);
+}
+.task-plan-dependencies input,
+.task-plan-confirm input {
+  flex-shrink: 0;
+  width: auto;
+}
+.task-plan-dependencies p,
+.task-plan-dependencies small {
+  color: var(--muted, #66707a);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.task-plan-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px dashed var(--line, #d8dee4);
+  border-radius: 10px;
+}
+.task-plan-add span {
+  color: var(--muted, #66707a);
+  font-size: 11px;
+}
+.task-plan-confirm {
+  display: flex;
+  align-items: start;
+  gap: 9px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.task-plan-confirm input {
+  margin-top: 4px;
+}
+.task-plan-save {
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+}
+.task-plan-save p {
+  color: var(--muted, #66707a);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.task-plan-warning {
+  display: grid;
+  gap: 9px;
+  padding: 12px;
+  border: 1px solid var(--line, #d8dee4);
+  border-left: 3px solid var(--warning, #a67436);
+  border-radius: 9px;
+  font-size: 12px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.task-plan-warning button {
+  justify-self: start;
+}
+.task-plan-notice {
+  color: var(--accent, #27776c);
+  font-size: 12px;
+  line-height: 1.7;
+}
+@media (max-width: 640px) {
+  .task-plan-panel {
+    padding: 14px;
+  }
+  .task-plan-header {
+    align-items: start;
+  }
+  .task-plan-basics,
+  .task-plan-assignment {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .task-plan-step {
+    padding: 12px;
+  }
+  .task-plan-saved-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+}
